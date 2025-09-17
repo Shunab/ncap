@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostops Capital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <a href="#" onclick="showPage('home')" class="brand-link">Nostops Capital</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation links -->
+                <div class="nav-links" id="nav-links">
+                    <a href="#" onclick="showPage('home')" class="nav-link active" data-page="home">Home</a>
+                    <a href="#" onclick="showPage('about')" class="nav-link" data-page="about">About</a>
+                    <a href="#" onclick="showPage('services')" class="nav-link" data-page="services">Services</a>
+                    <a href="#" onclick="showPage('blog')" class="nav-link" data-page="blog">Blog</a>
+                    <a href="#" onclick="showPage('contact')" class="nav-link" data-page="contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-headline">Disciplined Capital Allocation. Systematic Strategies.</h1>
+                        <p class="hero-subtext">Nostops Capital builds and operates structured trading strategies designed to capture inefficiencies across markets.</p>
+                        <div class="hero-actions">
+                            <button class="btn btn--primary" onclick="showPage('contact')">Contact Us</button>
+                            <button class="btn btn--outline" onclick="showPage('about')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Pillars -->
+            <section class="pillars">
+                <div class="container">
+                    <div class="pillars-grid">
+                        <div class="pillar-card">
+                            <h3>Discipline</h3>
+                            <p>Data-driven processes, no speculation.</p>
+                        </div>
+                        <div class="pillar-card">
+                            <h3>Execution</h3>
+                            <p>Built for precision and reliability.</p>
+                        </div>
+                        <div class="pillar-card">
+                            <h3>Efficiency</h3>
+                            <p>Capital deployed where it performs best.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Banner -->
+            <section class="cta-banner">
+                <div class="container">
+                    <div class="cta-content">
+                        <p>For inquiries or strategic partnerships, reach out directly.</p>
+                        <button class="btn btn--primary" onclick="showPage('contact')">Contact</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page">
+            <div class="container">
+                
+
+                <!-- Who We Are -->
+                <section class="about-section">
+                    <h2>Who We Are</h2>
+                    <p class="about-intro">Nostops Capital is a boutique firm focused on building systematic trading strategies with a focus on stability, speed, and scalability.</p>
+                </section>
+
+                <!-- Philosophy -->
+                <section class="about-section">
+                    <h2>Philosophy</h2>
+                    <div class="philosophy-grid">
+                        <div class="philosophy-card">
+                            <h3>Neutrality over narrative</h3>
+                            <p>We remove directional exposure and focus purely on process.</p>
+                        </div>
+                        <div class="philosophy-card">
+                            <h3>Velocity</h3>
+                            <p>Fast, frequent opportunities compound into consistent growth.</p>
+                        </div>
+                        <div class="philosophy-card">
+                            <h3>Guardrails and governance</h3>
+                            <p>Strict controls to protect capital at every stage.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Process -->
+                <section class="about-section">
+                    <h2>Process</h2>
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h3>Discover</h3>
+                            <p>Identify inefficiencies through structured data and analysis.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h3>Execute</h3>
+                            <p>Deploy strategies within well-defined constraints.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h3>Realize</h3>
+                            <p>Capture returns and rotate capital quickly.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h3>Review</h3>
+                            <p>Continuously refine through performance monitoring.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Services</h1>
+                    <p class="page-intro">Our offerings evolve alongside the markets we operate in. Below is our current flagship strategy.</p>
+                </div>
+
+                <!-- Current Product -->
+                <section class="service-section">
+                    <div class="service-card featured">
+                        <h2>Market-Neutral Arbitrage</h2>
+                        <p class="service-description">We identify and capture pricing discrepancies between correlated markets. This strategy is deployed primarily in highly liquid environments with clear settlement criteria, such as regulated prediction markets. Our focus is on realizing spreads quickly and recycling capital efficiently.</p>
+                        
+                        <ul class="service-features">
+                            <li>Hedged positions with no directional exposure.</li>
+                            <li>Fee-aware modeling and structured exits.</li>
+                            <li>Strict risk limits on position and venue levels.</li>
+                            <li>Designed for short-duration opportunities.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Future Services -->
+                <section class="service-section">
+                    <div class="future-services">
+                        <h2>Future Services</h2>
+                        <p>Additional strategies and services are in development.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Blog Page -->
+        <div id="blog-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Insights</h1>
+                    <p class="page-intro">Our perspectives on markets, strategy, and execution.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card" onclick="showBlogPost('value-of-neutrality-modern-markets')">
+                        <div class="blog-date">September 10, 2025</div>
+                        <h3>The Value of Neutrality in Modern Markets</h3>
+                        <p>Exploring how market-neutral strategies provide stability in volatile environments.</p>
+                    </article>
+                    
+                    <article class="blog-card" onclick="showBlogPost('execution-discipline-over-narratives')">
+                        <div class="blog-date">September 5, 2025</div>
+                        <h3>Execution Discipline Over Market Narratives</h3>
+                        <p>Why systematic execution trumps following market stories and trends.</p>
+                    </article>
+                    
+                    <article class="blog-card" onclick="showBlogPost('compounding-through-velocity')">
+                        <div class="blog-date">August 28, 2025</div>
+                        <h3>Compounding Through Velocity</h3>
+                        <p>How rapid capital rotation can amplify returns in systematic strategies.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post Page -->
+        <div id="blog-post-page" class="page">
+            <div class="container">
+                <div class="blog-post">
+                    <button class="back-btn" onclick="showPage('blog')">← Back to Insights</button>
+                    <article id="blog-post-content">
+                        <!-- Content will be inserted by JavaScript -->
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-form-section">
+                        <h1>Contact Us</h1>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="organization">Organization</label>
+                                <input type="text" id="organization" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message</label>
+                                <textarea id="message" class="form-control" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>For partnerships, inquiries, or platform discussions, reach out using the form or email above.</p>
+                        <div class="contact-detail">
+                            <strong>Email:</strong>
+                            <a href="mailto:hello@nostopscapital.com">hello@nostopscapital.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-description">
+                    <h3>Nostops Capital</h3>
+                    
+                </div>
+                
+                <div class="footer-nav">
+                    <a href="#" onclick="showPage('home')">Home</a>
+                    <a href="#" onclick="showPage('about')">About</a>
+                    <a href="#" onclick="showPage('services')">Services</a>
+                    <a href="#" onclick="showPage('blog')">Blog</a>
+                    <a href="#" onclick="showPage('contact')">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+               
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Toast -->
+    <div id="success-toast" class="toast hidden">
+        <p>Thanks — we'll be in touch.</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
