@@ -1,0 +1,414 @@
+.capability.expanded {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.blog-scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+/* Design System Variables */
+:root {
+  /* Primitive Color Tokens */
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-cream-50: rgba(252, 252, 249, 1);
+  --color-cream-100: rgba(255, 255, 253, 1);
+  --color-gray-200: rgba(245, 245, 245, 1);
+  --color-gray-300: rgba(167, 169, 169, 1);
+  --color-gray-400: rgba(119, 124, 124, 1);
+  --color-slate-500: rgba(98, 108, 113, 1);
+  --color-brown-600: rgba(94, 82, 64, 1);
+  --color-charcoal-700: rgba(31, 33, 33, 1);
+  --color-charcoal-800: rgba(38, 40, 40, 1);
+  --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: rgba(50, 184, 198, 1);
+  --color-teal-400: rgba(45, 166, 178, 1);
+  --color-teal-500: rgba(33, 128, 141, 1);
+  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-700: rgba(26, 104, 115, 1);
+  --color-teal-800: rgba(41, 150, 161, 1);
+  
+  /* RGB versions for opacity control */
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+  --color-slate-500-rgb: 98, 108, 113;
+  
+  /* Semantic Color Tokens (Light Mode) */
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  
+  /* Typography */
+  --font-family-base: "FKGroteskNeue", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.01em;
+  
+  /* Spacing */
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  
+  /* Border Radius */
+  --radius-base: 8px;
+  
+  /* Animation */
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+@font-face {
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Hero Container */
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--space-32);
+}
+
+/* Geometric Background Elements */
+.geometric-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.grid-line {
+  position: absolute;
+  background-color: var(--color-border);
+}
+
+.grid-line.vertical {
+  width: 1px;
+  height: 100%;
+  top: 0;
+}
+
+.grid-line.horizontal {
+  width: 100%;
+  height: 1px;
+  left: 0;
+}
+
+.grid-line.v1 { left: 20%; }
+.grid-line.v2 { left: 40%; }
+.grid-line.v3 { left: 60%; }
+.grid-line.v4 { left: 80%; }
+
+.grid-line.h1 { top: 25%; }
+.grid-line.h2 { top: 50%; }
+.grid-line.h3 { top: 75%; }
+
+.geometric-shape {
+  position: absolute;
+  border: 1px solid var(--color-border);
+}
+
+.shape-1 {
+  top: 10%;
+  right: 15%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.shape-2 {
+  bottom: 15%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+}
+
+.shape-3 {
+  top: 60%;
+  right: 8%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* Content Container */
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Column - Main Content */
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  margin-top: var(--space-32);
+}
+
+.company-name {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+.tagline {
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  max-width: 500px;
+}
+
+.separator {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-primary);
+  margin: var(--space-16) 0;
+}
+
+/* Right Column - Capabilities Grid */
+.capabilities-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* ⬅️ centers all cards as a block */
+  gap: var(--space-32);
+  position: relative;
+  height: 100%;                /* ⬅️ ensures center works inside frozen area */
+}
+
+.capability {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-24);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  background-color: var(--color-surface);
+  transition: border-color var(--duration-normal) var(--ease-standard);
+}
+
+
+.capability-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.capability-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: var(--space-32);
+  right: var(--space-32);
+  display: flex;
+  gap: var(--space-24);
+  z-index: 10;
+}
+
+.nav-link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color var(--duration-normal) var(--ease-standard);
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* Footer Label */
+.footer-label {
+  position: absolute;
+  bottom: var(--space-32);
+  left: var(--space-32);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    max-width: 700px;
+  }
+  
+  .geometric-bg {
+    opacity: 0.2;
+  }
+  
+  .shape-1, .shape-3 {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-24);
+    padding-top: var(--space-32);
+  }
+  
+  .nav {
+    top: var(--space-24);
+    right: var(--space-24);
+    gap: var(--space-16);
+  }
+  
+  .footer-label {
+    bottom: var(--space-24);
+    left: var(--space-24);
+  }
+  
+  .hero-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    gap: 0;
+  }
+  
+  .hero-main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: visible;
+    margin-top: var(--space-24);
+  }
+  
+  .capabilities-grid {
+    height: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-right: var(--space-8);
+  }
+  
+  .capability {
+    padding: var(--space-16);
+  }
+  
+  .grid-line.v2, .grid-line.v3 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 36px;
+  }
+  
+  .tagline {
+    font-size: 16px;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: var(--space-12);
+    align-items: flex-end;
+  }
+  
+  .grid-line.horizontal {
+    display: none;
+  }
+}
+
+/* Button-based nav compatibility for our React Nav component */
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Animation helpers for RightPanel */
+.capability .content { 
+  opacity: 1; 
+  transition: opacity 0.5s linear; 
+}
+/* During merge/unmerge/merged-hold, we hide text and fade the outline */
+.capabilities-grid.no-borders .capability { 
+  border-color: rgba(var(--color-brown-600-rgb), 0); 
+}
+.capabilities-grid.no-borders .capability .content { 
+  opacity: 0; 
+}
